@@ -8,12 +8,39 @@
 
     <h1>Git</h1>
     <h2>Comandos</h2>
-    git init: Iniciar um diretorio git
-    git ls-files: Visualizar arquivos do git
-    git status: Status do diretorio
-    git add: Adicionar o arquivo
-    git commit -m "Criando o projeto": Commitar com mensagem
-    git config user.name "Joao": Configura o nome do projeto git
-    git config user.email "joao@gmail.com": Configura o email do projeto git
+    git init: Iniciar um repositorio git<br>
+    git ls-files: Visualizar arquivos do git<br>
+    git status: Status do diretorio<br>
+    git add: Adicionar o arquivo ao repositorio para rastrea-lo<br>
+    git commit -m "Criando o projeto": Commitar com mensagem<br>
+    git config user.name "Joao": Configura o nome do projeto git<br>
+    git config user.email "joao@gmail.com": Configura o email do projeto git<br>
+    
+    <h4>Estados do repositorio</h4>
+    <p>Os três estados de um repositório são "Working Directory", que são os arquivos que temos em nosso repositório e podemos modificá-los, "Index" ou "Staging Area", que é uma visão preliminar das modificações em nossos arquivos que queremos definir como um novo passo do projeto, e "HEAD", que é um passo completo de nosso trabalho, usado como referência para a comparação com nosso "Working Directory".
+    </p>
+    
+    <h3>Obs</h3>
+    
+    <h4>Utilizando o comando git add</h4>
+    
+    <p>É possível passar mais de um arquivo como parâmetro para o comando <strong>git add</strong>, basta separá-los por um espaço em branco, no mesmo comando. Além disso é possível adicionar todos os arquivos da pasta atual, com <strong>git add .</strong>.
+    </p>
+    <p>O parâmetro também pode ser uma operação de busca de arquivos comum, por exemplo, para adiconar todos os arquivos com a extensão "txt" ao Index, podemo utilizar o comando <strong>git add *.txt</strong>, ou todos os arquivos em uma determinada subpasta do repositório com <strong>git add nome_da_pasta/</strong>.
+    </p>
+    
+    <h4>O comando git add interativo</h4>
+    
+    <p>O comando <strong>git add -i</strong> é mais recomendado quando temos um número muito grande de alterações a serem adicionadas ao Index, e também um grande número de alterações que não gostaríamos de adicionar ao Index. O modo interativo inclusive permite que adicionemos seletivamente trechos de um arquivo, deixando algumas modificações de fora mesmo estando em no mesmo arquivo.
+    </p>
+    <p>A nomenclatura das opções não é consistente com os comandos que utilizamos até agora, porém perceba que sempre uma das opções é de ajuda, e podemos consultá-la a qualquer momento. Caso esteja em dúvida, sempre existe a opção de terminar o modo interativo e voltar ao prompt de comando
+    </p>
+    
+    <h4>Commit automático</h4>
+    
+    <p>O comando <strong>git commit -a</strong> já cria um novo HEAD com todas as alterações detectadas no repositório, porém novos arquivos não serão adicionados. O comando pode ser utilizado diretamente, dessa maneira o editor de textos padrão do computador será aberto para que uma mensagem de "commit" seja adicionada.
+    </p>
+    <p>Podemos combinar a opção de mensagem com <strong>git commit -am 'Mensagem de commit'</strong>.
+    </p>
 </body>
 </html>
