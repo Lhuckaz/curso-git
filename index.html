@@ -3,24 +3,71 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Curso Git</title>
+    <style>
+        p strong {background-color: #ccc;}
+    </style>
 </head>
 <body>
 
     <h1>Git</h1>
     <h2>Comandos</h2>
-    git init: Iniciar um repositorio git<br>
-    git ls-files: Visualizar arquivos do git<br>
-    git status: Status do diretorio<br>
-    git add: Adicionar o arquivo ao repositorio para rastrea-lo<br>
-    git commit -m "Criando o projeto": Commitar com mensagem<br>
-    git config user.name "Joao": Configura o nome do projeto git<br>
-    git config user.email "joao@gmail.com": Configura o email do projeto git<br>
-    git log: Mostra os commits e suas mensagens<br>
-    git whatchanged: Mostra quais arquivos foi alterado<br>
-    git whatchanged -p: Mostra o que foi alterado<br>
-    git remote: Verifica se tem algum repositorio remoto<br>
-    git remote add origin https://github.com/Lhuckaz/curso-git.git: Adiciona uma 'origin' no repositorio<br>
-    git push origin master: realiza o commit no master<br>
+    <strong>git init:</strong> Iniciar um repositorio git<br>
+    <strong>git ls-files:</strong> Visualizar arquivos do git<br>
+    <strong>git status:</strong> Status do diretorio<br>
+    <strong>git add:</strong> Adicionar o arquivo ao repositorio para rastrea-lo<br>
+    <strong>git commit -m "Criando o projeto":</strong> Commitar com mensagem<br>
+    <strong>git config user.name "Joao":</strong> Configura o nome do projeto git<br>
+    <strong>git config user.email "joao@gmail.com":</strong> Configura o email do projeto git<br>
+    <strong>git log:</strong> Mostra os commits e suas mensagens<br>
+    <strong>git log -p:</strong> Mas detalhes de log<br>
+    <strong>git log --stat:</strong> Mostra qual arquivo foi alterado com menos detalhe<br>
+    <strong>git log --graph:</strong> Mostra quais arquivo foram alterados de modo grafico<br>
+    <strong>git whatchanged:</strong> Mostra quais arquivos foi alterado<br>
+    <strong>git whatchanged -p:</strong> Mostra o que foi alterado<br>
+    <strong>git diff &lt;nome-do-repositorio-remoto&gt;/master:</strong> Mostra as diferenças<br>
+    <strong>git remote:</strong> Verifica se tem algum repositorio remoto<br>
+    <strong>git remote add origin https://github.com/Lhuckaz/curso-git.git:</strong> Adiciona uma 'origin' no repositorio<br>
+    <strong>git push origin master:</strong> realiza o commit no master<br>
+    <strong>git branch:</strong> Mostrar as branch<br>
+    <strong>git branch -r:</strong> Mostrar somente as branch remotas<br>
+    <strong>git branch -a:</strong> Mostrar todas as branch<br>
+    <strong>git branch &lt;nome-da-branche&gt;:</strong> Criar branch<br>
+    <strong>git checkout -b &lt;nome-da-branche&gt;:</strong> Criamos a branch e mudamos para a mesma<br>
+    <strong>git branch -t &lt;nome-da-nova-branche&gt; origin/&lt;nome-da-branche-remota&gt;:</strong> Criar branch apartir de uma remota<br>
+    <strong>git checkout &lt;nome-da-branche&gt;:</strong> Muda de branch<br>
+    <!-- <strong>git push origin &lt;nome-da-branche&gt;:<strong> Sobe a branch no repositorio remoto<br> -->
+    <strong>git push -u origin &lt;nome-da-branche&gt;:</strong> Sobe a branch no repositorio remoto<br>
+    <strong>git branch -d &lt;nome-da-branche&gt;:</strong> Deleta a branch<br>
+    <strong>git push origin :&lt;nome-da-branche&gt;:</strong> Deleta a branch remota<br>
+    <strong>git fetch origin:</strong> Verifica se foi criada branch novas no repositorio<br>
+    <strong>git pull</strong> Traz os comandos 'update'<br>
+    <strong>git pull origin marter:</strong> Traz os comandos 'update'<br>
+    <strong>git pull merge:</strong> Mostar qual a ferramenta usa <br>
+    <strong>git pull mergetool:</strong> Analise o merge<br>
+    <strong>git pull merge &lt;nome-da-branche&gt;:</strong> Faz merge de uma branch<br>
+    <strong>git rebase master &lt;nome-da-branche&gt;:</strong> Faz merge da base<br>
+    <strong>git rebase --continue:</strong> Continuar o merge de uma branch remota<br>
+    <strong>git rebase --abort:</strong> Voltar ao ponto que se estava antes de realizar o rebase<br>
+    <strong>git rebase --skip:</strong> Descartar o seu commit atual que gera o conflito<br>
+    <strong>git checkout &lt;nome-do-arquivo&gt;:</strong> Volta esse arquivo pro ultimo estado em que ele estava no Index<br>
+    <strong>git reset HEAD &lt;nome-do-arquivo&gt;:</strong> Volta o arquivo ao ultimo estado antes de ser commitado*<br>
+    <strong>git reset &lt;hash-do-commit&gt;:</strong> Volta o arquivo ao id do commmit<br>
+    <strong>git revert &lt;hash-do-commit&gt;:</strong> Desfazer um commit<br>
+    <strong>git stash:</strong> Commita para um repositorio temporario<br>
+    <strong>git stash list:</strong> Mostra os stach disponivel<br>
+    <strong>git stash pop:</strong> Retorna o stash para o primeiro da pilha<br>
+    <strong>git stash aply @{0}:</strong> Retorna um stash especifico da pilha<br>
+    <strong>git stash drop:</strong> Deleta um stash<br>
+    <strong>git stash clear:</strong> Deleta todos os stash<br>
+    <strong>git bisect start:</strong> Startar o modo bisect<br>
+    <strong>[bisect] git bisect bad HEAD:</strong> Confirmar um commit que com certeza é ruim<br>
+    <strong>[bisect] git bisect good &lt;hash-do-commit&gt;:</strong> Confirmar um commit que com certeza é bom<br>
+    <strong>[bisect] git bisect bad</strong>: Comentar se um commit é ruim<br>
+    <strong>[bisect] git bisect good</strong>: Comentar se um commit é bom<br>
+    <strong>git log --pretty=oneline:</strong> Mostra log em um linha. <strong>short:</strong> mostra poucas info <strong>full:</strong> mostra todas info<br>
+    <strong>git log --pretty='%an realizaou o commit %h: %s':</strong> <strong>%an:</strong> Autor do commit, <strong>%h:</strong> Hash do ommit, <strong>%s:</strong> Mensagem.<br>
+    <strong>git merge &lt;nome-do-repositorio-remoto&gt;/master:</strong> Faz o merge entre os repositorios<br>
+    
     
     <h4>Estados do repositorio</h4>
     <p>Os três estados de um repositório são "Working Directory", que são os arquivos que temos em nosso repositório e podemos modificá-los, "Index" ou "Staging Area", que é uma visão preliminar das modificações em nossos arquivos que queremos definir como um novo passo do projeto, e "HEAD", que é um passo completo de nosso trabalho, usado como referência para a comparação com nosso "Working Directory".
@@ -47,6 +94,25 @@
     <p>O comando <strong>git commit -a</strong> já cria um novo HEAD com todas as alterações detectadas no repositório, porém novos arquivos não serão adicionados. O comando pode ser utilizado diretamente, dessa maneira o editor de textos padrão do computador será aberto para que uma mensagem de "commit" seja adicionada.
     </p>
     <p>Podemos combinar a opção de mensagem com <strong>git commit -am "Mensagem de commit"</strong>.
+    </p>
+    
+    <h4>Branch e arquivo com mesmo nome</h4>
+    
+    <p>Se temos o nome de um arquivo igual ao nome de uma branch, ao realizar o comando <strong>git checkout</strong> passando este nome, o Git irá realizar a troca de branch. Para conseguirmos descartar as alterações do Working Directory, precisamos passar "--" para indicar que é o arquivo da branch atual, isto é, <strong>git checkout -- &lt;nome-do-arquivo&gt;</strong>.</p>
+    
+    <h4>Git reset</h4>
+    
+    <p>Com o <strong>git reset</strong>, as alterações serão enviadas para o Working Directory; com o <strong>git reset --soft</strong>, para o Index. Já para o <strong>git reset --hard</strong>, as alterações serão removidas permanentemente.</p>
+    
+    <h4>Atalhos dos últimos commits</h4>
+    
+    <p>Ao digitarmos "HEAD~" seguido de um número inteiro n, será feita uma referência ao n-ésimo commit anterior ao HEAD. Por exemplo, HEAD~1, faz referência ao penúltimo commit e HEAD~2, ao antepenúltimo. No caso específico do penúltimo commit, também pode-se referenciá-lo utilizando o atalho HEAD^.</p>
+    
+    <h4>.gitconfig</h4>
+    
+    <p>Arquivo de configuração do Git, podemos criar alias atráves dele</p>
+    
+    <p>* Aplicar esse comando quando o arquivo já está preparado para o commit para só assim aplicar o comando <strong>git checkout &lt;nome-do-arquivo&gt;</strong>, caso o arquivo não estiver pronto para o commit não é necessário usar esse comando
     </p>
 </body>
 </html>
