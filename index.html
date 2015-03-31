@@ -5,6 +5,7 @@
 	<title>Curso Git</title>
     <style>
         p strong {background-color: #ccc;}
+        pre {line-height:50%;}
     </style>
 </head>
 <body>
@@ -112,7 +113,20 @@
     
     <p>Arquivo de configuração do Git, podemos criar alias atráves dele</p>
     
+    <strong>Ex.</strong>
+    <pre>
+[user]<br>
+    name = Lucas<br>
+    email = lucasldaf12@yahoo.com.br<br>
+[alias]<br>
+	st = status<br>
+	co = checkout<br>
+	envia = !git checkout master && git pull && git checkout desenvolvimento && git rebase master && git checkout master && git merge desenvolvimento && git push<br>
+	historico = log --pretty='Commit %h de %an em %ad: %s' --graph<br>
+    </pre>
+    
     <p>* Aplicar esse comando quando o arquivo já está preparado para o commit para só assim aplicar o comando <strong>git checkout &lt;nome-do-arquivo&gt;</strong>, caso o arquivo não estiver pronto para o commit não é necessário usar esse comando
     </p>
+
 </body>
 </html>
